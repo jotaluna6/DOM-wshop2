@@ -28,7 +28,9 @@
 
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
-
+      agregar un recuadro gris antes de que carguen las imagenes
+      agregar un boton pa limpiar
+      para ver en la consola cuantas cargadas y cuantas agregadas
       Start modyfing from here.
     -->
     <div class="py-10 max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,40 +50,28 @@
           Tailwind. It also includes Prettier and automatic publish to GitHub
           pages using GitHub Actions. Learn more:
         </p>
-        <ul
-          class="text-xl leading-7 sm:flex justify-around sm:max-w-2xl sm:mx-auto mt-10"
-        >
-          <li class="my-4 p-4 px-6 bg-gray-300 hover:bg-gray-500">
-            <a href="https://snowpack.dev" target="_blank">snowpack.dev</a>
-          </li>
-          <li class="my-4 p-4 px-6 bg-gray-300 hover:bg-gray-500">
-            <a href="https://tailwindcss.com" target="_blank"
-              >tailwindcss.com</a
-            >
-          </li>
-          <li class="my-4 p-4 px-6 bg-gray-300 hover:bg-gray-500">
-            <a
-              href="https://docs.github.com/en/free-pro-team@latest/actions"
-              target="_blank"
-              >GitHub Actions</a
-            >
-          </li>
-        </ul>
-        <p class="mt-14 text-xl leading-7 text-gray-500">Start using it:</p>
-        <div class="my-5 bg-gray-800 p-5 text-white">
-          <code>
-            npx create-snowpack-app my-app --template snowpack-template-tailwind
-          </code>
+        <button id="add" class="py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none 
+        focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          Agregar imagen</button>
+        <button id="remove"  class="font-medium text-indigo-600 hover:text-indigo-500">
+          Limpiar</button>
+
+        <div id="images">
         </div>
-        <p class="mt-16 text-xl leading-7 text-gray-500 underline">
-          <a href="https://github.com/jonalvarezz/snowpack-template-tailwind"
-            >See on GitHub</a
-          >
-        </p>
+
       </div>
     </div>
 
     <!-- Add more scripts here -->
+    <script>
+      let agregadas= 0;
+      let cargadas= 0;
+      const infoq = () => {
+        console.log(`⚪ Se han agregado ${agregadas} imágenes`);
+        console.log(`🟣 Se han cargado ${cargadas} imágenes`);
+        console.log("---------------------------------------");
+      }
+    </script>
     <script type="module" src="/_dist_/index.js"></script>
   </body>
 </html>
